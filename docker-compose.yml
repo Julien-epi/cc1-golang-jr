@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    volumes:
+      # - .:/app
+      - ./csvgenerate:/app/csvgenerate 
+    environment:
+      - PERSONNAL_TOKEN_GITHUB=${PERSONNAL_TOKEN_GITHUB:-default_token}
+      - GITHUB_ORG_URL=${GITHUB_ORG_URL:-default_token}
